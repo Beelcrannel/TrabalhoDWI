@@ -1,13 +1,22 @@
-function save(){
 const baseUrl = 'http://159.65.228.63/';
+const form = document.getElementById('form-atividade');
 
-const dadosExemplo = {
-    prioridade: 'Urgente',
-    descricao: 'Entregar trabalho final DW',
-    local: 'IFC',
-    recursosNecessarios:['Computador', 'Internet', 'Exemplos anteriores'],
-    dataLimite: '2025-12-03 00:00:00',
-    matricula: 2025306210
-}
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const dados= {
+        nome:document.getElementById('nome').value,
+        prioridade: document.getElementById('prioridade').value,
+        descricao:document.getElementById('descricao').value,
+        local:document.getElementById('local').value,
+        recursosNecessarios:document.getElementById('recursosNecessarios').value,
+        dataLimite:document.getElementById('dataLimite').value,
+        matricula: Number(document.getElementById('matricula').value)
+    };
+});
 
-}
+try{
+    const response = await fetch(baseUrl + 'atividade', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dados)})
+    };

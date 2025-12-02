@@ -23,6 +23,17 @@ label{
 }
 button{
     margin: 20px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 input{
     border-radius: 10px;

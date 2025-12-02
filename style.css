@@ -31,3 +31,17 @@ input{
     padding-right: 100px;
     padding-left: 100px;
 }
+.link-lista {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: large;
+    display: inline-block;
+    text-align: center;
+}
+.link-lista:hover {
+    background-color: #45a049;
+}

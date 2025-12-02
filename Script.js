@@ -16,8 +16,8 @@ async function save() {
     }
 
     const recursosNecessarios = recursos
-        ? recursos.split(",").map(r => r.trim())
-        : [];
+        recursos.split(",").map(r => r.trim());
+        [];
 
     const tarefa = {
         prioridade,

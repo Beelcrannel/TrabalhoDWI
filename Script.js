@@ -2,18 +2,28 @@ const url = "http://159.65.228.63/Cadastro_de_Tarefas";
 
 async function save() {
 
-    const prioridade = document.getElementById("priority").value;
-    const descricao = document.getElementById("descricao").value;
-    const local = document.getElementById("local").value;
-    const recursos = document.getElementById("recursos").value;
-    const dataLimite = document.getElementById("dataLimite").value;
-    const matricula = document.getElementById("matricula").value;
+    const prioridade = document.getElementById("priority")?.value.trim();
+    const descricao = document.getElementById("descricao")?.value.trim();
+    const local = document.getElementById("local")?.value.trim();
+    const recursos = document.getElementById("recursos")?.value.trim();
+    const dataLimite = document.getElementById("dataLimite")?.value.trim();
+    const matricula = document.getElementById("matricula")?.value.trim();
+
+
+    if (!prioridade || !descricao || !local || !dataLimite || !matricula) {
+        alert("Preencha todos os campos obrigatórios!");
+        return;
+    }
+
+    const recursosNecessarios = recursos
+        ? recursos.split(",").map(r => r.trim())
+        : [];
 
     const tarefa = {
         prioridade,
         descricao,
         local,
-        recursosNecessarios: recursos,
+        recursosNecessarios,
         dataLimite,
         matricula
     };
@@ -25,14 +35,13 @@ async function save() {
             body: JSON.stringify(tarefa)
         });
 
-        alert("Tarefa salva!");
+        alert("Tarefa salva com sucesso!");
 
-        if (document.getElementById("priority")) document.getElementById("priority").value = "";
-        if (document.getElementById("descricao")) document.getElementById("descricao").value = "";
-        if (document.getElementById("local")) document.getElementById("local").value = "";
-        if (document.getElementById("recursos")) document.getElementById("recursos").value = "";
-        if (document.getElementById("dataLimite")) document.getElementById("dataLimite").value = "";
-        if (document.getElementById("matricula")) document.getElementById("matricula").value = "";
+        ["priority", "descricao", "local", "recursos", "dataLimite", "matricula"]
+            .forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = "";
+            });
 
     } catch (erro) {
         console.error("Erro ao salvar:", erro);
@@ -72,7 +81,7 @@ async function carregarTarefas() {
                 <td>${tarefa.prioridade || ""}</td>
                 <td>${tarefa.descricao || ""}</td>
                 <td>${tarefa.local || ""}</td>
-                <td>${tarefa.recursosNecessarios || ""}</td>
+                <td>${Array.isArray(tarefa.recursosNecessarios) ? tarefa.recursosNecessarios.join(", ") : ""}</td>
                 <td>${tarefa.dataLimite || ""}</td>
                 <td>${tarefa.matricula || ""}</td>
             `;

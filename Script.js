@@ -1,13 +1,13 @@
-const url = "http://159.65.228.63/Cadastro_de_Tarefas";
+const url = "http://159.65.228.63/produtos";
 
 async function save() {
 
-    const prioridade = document.getElementById("priority")?.value.trim();
-    const descricao = document.getElementById("descricao")?.value.trim();
-    const local = document.getElementById("local")?.value.trim();
-    const recursos = document.getElementById("recursos")?.value.trim();
-    const dataLimite = document.getElementById("dataLimite")?.value.trim();
-    const matricula = document.getElementById("matricula")?.value.trim();
+    const prioridade = document.getElementById("priority").value.trim();
+    const descricao = document.getElementById("descricao").value.trim();
+    const local = document.getElementById("local").value.trim();
+    const recursos = document.getElementById("recursos").value.trim();
+    const dataLimite = document.getElementById("dataLimite").value.trim();
+    const matricula = document.getElementById("matricula").value.trim();
 
 
     if (!prioridade || !descricao || !local || !dataLimite || !matricula) {

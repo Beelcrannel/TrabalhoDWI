@@ -43,7 +43,6 @@ font-size: 1rem;
 margin-top: 5px;
 }
 
-/* botão padrão (ex: salvar) */
 button {
 margin-top: 20px;
 padding: 12px 22px;
@@ -63,7 +62,6 @@ transform: scale(1.05);
 box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* link estilizado para a página de lista */
 .link-lista {
 margin-top: 10px;
 background-color: #4CAF50;

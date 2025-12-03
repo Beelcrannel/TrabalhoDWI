@@ -1,4 +1,4 @@
-const url = "http://159.65.228.63/produtos";
+const url = "http://159.65.228.63/tarefas";
 
 async function save() {
 

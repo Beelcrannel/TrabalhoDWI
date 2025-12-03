@@ -32,43 +32,6 @@ display: block;
 margin-top: 10px;
 font-weight: 500;
 }
-<<<<<<< Updated upstream
-button{
-    margin: 20px;
-    padding: 12px 22px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: 600;
-}
-button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
-input{
-    border-radius: 10px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-right: 100px;
-    padding-left: 100px;
-}
-.link-lista {
-    margin-top: 10px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: large;
-    display: inline-block;
-    text-align: center;
-}
-.link-lista:hover {
-    background-color: #45a049;
-}
-=======
 
 input {
 width: 100%;
@@ -80,19 +43,40 @@ font-size: 1rem;
 margin-top: 5px;
 }
 
+/* botão padrão (ex: salvar) */
 button {
 margin-top: 20px;
-padding: 10px 20px;
-border-radius: 10px;
+padding: 12px 22px;
 border: none;
+border-radius: 10px;
 font-size: 1rem;
 cursor: pointer;
+font-weight: 600;
 background-color: #3498db;
 color: #fff;
-transition: background-color 0.2s ease, transform 0.1s ease;
+transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
 background-color: #2980b9;
+transform: scale(1.05);
+box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
->>>>>>> Stashed changes
+
+/* link estilizado para a página de lista */
+.link-lista {
+margin-top: 10px;
+background-color: #4CAF50;
+color: white;
+padding: 12px 20px;
+text-decoration: none;
+border-radius: 10px;
+font-size: large;
+display: inline-block;
+text-align: center;
+transition: background-color 0.2s ease;
+}
+
+.link-lista:hover {
+background-color: #45a049;
+}

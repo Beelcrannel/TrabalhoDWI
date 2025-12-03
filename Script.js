@@ -16,8 +16,9 @@ async function save() {
     }
 
     const recursosNecessarios = recursos
-        recursos.split(",").map(r => r.trim());
-        [];
+        ? recursos.split(",").map(r => r.trim())
+        : [];
+
 
     const tarefa = {
         prioridade,
@@ -55,6 +56,9 @@ async function carregarTarefas() {
     const mensagem = document.getElementById("mensagem");
 
     if (!tabela || !corpo || !mensagem) return;
+
+    corpo.innerHTML = "";
+    mensagem.textContent = "";
 
     try {
         const resposta = await fetch(url);
